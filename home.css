@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+input[type="datetime-local"]:focus{
+    outline:none;
+}
+input[type="text"]:focus {
+    outline:none;
+}
+select:focus{
+    outline:none;
+}
+#heading {
+    text-align: center;
+    color: grey;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+#new-task{
+    display: flex;
+    flex-direction: column;
+}
+#sub-task{
+    display: flex;
+    flex-direction: row;
+}
+#description{
+    width: 99vw;
+    border: solid lightgrey 1px;
+    color: grey;
+    padding:4px 0 2px 12px;
+}
+#description1{
+    width: 99vw;
+    border: none;
+    height: 40px;
+}
+#category{
+    width: 50vw;
+    border: solid lightgrey 1px;
+    color: grey;
+    display: inline-block;
+    padding:4px 0 2px 12px;
+}
+#category1{
+    height: 40px;
+    width: 48vw;
+    border: none;
+}
+#date{
+    width: 50vw;
+    border: solid lightgrey 1px;
+    color: grey;
+    display: inline-block;
+    padding:4px 0 2px 12px;
+}
+#date1{
+    height: 40px;
+    width: 48vw;
+    border: none;
+}
+.button{
+    width: 200px;
+    background-color: grey;
+    color: white;
+    font-weight: 600;
+    height: 50px;
+    position: absolute;
+    right: 7px;
+    top: 18px;
+}
+#button{
+    width: 50vw;
+    position:relative;
+}
+#addimg{
+    position: absolute;
+    right: 150px;
+    top: 18px;
+    z-index: 2;
+
+}
+
+.button1{
+    width: 200px;
+    position: absolute;
+    left: 51vw;
+    top: -10.3vh;
+    background-color:red;
+    color: white;
+    font-weight: 600;
+    height: 50px;
+    
+}
+#delimg{
+    position: absolute;
+    left: 51.5vw;
+    top: -10vh;
+    z-index: 2;
+}
+#container{
+    width: 100vw;
+    position: absolute;
+    top: 45%;
+     
+}
+
+#tasks-list{
+    position: relative;
+    width: 100vw;
+    border-top: 1px solid lightgrey;
+    height: 80px;
+    margin-top: 0;
+}
+#c{
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    background-color: lightcoral;
+    border: 2px solid grey;
+    padding-left: 1vw;
+    padding-top: 2.5vh;
+    color: white;
+    text-transform: uppercase;
+}
+#task-description{
+    width:60vw;
+    top: 1vh;
+    position: absolute;
+    left: 4vw;
+}
+#due-date{
+    display: block;
+    margin-left: 30px;
+    position: absolute;
+    left: 4vw;
+    top: 6vh;
+    
+}
+input[type="checkbox"]{
+    position: absolute;
+    top: 40%;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+#category1 option:hover{
+    background-color: darkorange;
+}
+#dateimg{
+    position: absolute;
+    left: 3.8vw;
+    top:7vh;
+}

@@ -1,0 +1,113 @@
+<html>
+    <head>
+    <title>
+       <%= locals.title %>
+    </title>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+</head>
+<body>
+    <!-- the heading section -->
+    <div id="heading">
+        TODO App
+    </div>
+     <!-- Form to take input from user -->
+    <form action="/create-task" method="POST">
+        
+    <!-- To create new task -->
+    <div id="new-task">
+        
+    <!-- the description section -->
+    <div id="description">
+      
+        <label for="text">DESCRIPTION</label><br>
+        <input type="text" id="description1" name="description" placeholder="what do you want to do?" required><br><br>
+        
+    </div>
+          <!-- the category section -->
+    <div id="sub-task">
+          <div id="category">
+            <label for="text">CATEGORY</label><br>
+                <select id="category1" name="category" placeholder="choose a category" required>
+                    <option style="background-color: white;" value="" disabled selected>Select your option</option>
+                    <option style="background-color: white;" value="PUBLIC">PUBLIC</option>
+                    <option style="background-color: white;" value="PERSONAL">PERSONAL</option>
+                    <option style="background-color: white;" value="WORK">WORK</option>
+                    <option style="background-color: white;" value="SCHOOL">SCHOOL</option>
+                    <option style="background-color: white;" value="CLEANING">CLEANING</option>
+                    <option style="background-color: white;" value="OTHER">OTHER</option>
+                </select>
+    </div>
+    <!-- the date section -->
+    <div id="date">
+        <label for="date" >DUE DATE WITH TIME</label><br>
+        <input type="datetime-local" id="date1" name="date" placeholder=" choose the date" required>
+    </div>
+    </div>
+    </div>
+    <!-- the buttons to add a task -->
+    <div id ="button">
+        <img id="addimg" src="https://img.icons8.com/cotton/50/000000/add.png"/>
+        <button id="add" class="button" type="submit" value="Submit">ADD TASK</button>
+    </div>
+    </form>
+   
+    <!-- the delete button -->
+         
+    <!-- the new added task section -->
+    <div id="container">
+      <!-- the form action for getting the deleted task -->
+      <img id="delimg" src="https://img.icons8.com/bubbles/50/000000/delete-forever.png">  
+      <form action="/delete-task" method="GET">    
+                
+        <button class="button1" type="submit" value="Submit">DELETE TASK</button>
+
+          <% for(let i of todo) { %>
+                    
+                        <!-- newly added todo list -->
+                    <div id="tasks-list">
+                         
+                        <input type="checkbox" name="<%= i._id %>" >
+                        <p id="task-description"><%= i.description %></p>
+                         
+                        <p id="c"><%= i.category %></p>
+
+                        <img id="dateimg" src="https://img.icons8.com/offices/30/000000/calendar.png">                    
+                        <p id="due-date"> <%= i.date %></p>
+
+                    </div>
+
+                <% } %>
+                    
+                
+    </div> 
+    </form>  
+    </div>
+    <!--scripts to add dynamic effects-->>
+<script>
+   document.getElementById("description1").addEventListener("click",function(){
+    document.getElementById("description1").style.backgroundColor="lightblue";
+    document.getElementById("description").style.backgroundColor="lightblue";
+   });
+   document.getElementById("description1").addEventListener("mouseleave",function(){
+    document.getElementById("description1").style.backgroundColor="white";
+    document.getElementById("description").style.backgroundColor="white";
+   });
+   
+   
+   document.getElementById("category1").addEventListener("mouseenter",function(){
+    document.getElementById("category").style.backgroundColor="lightblue";
+    document.getElementById("category1").style.backgroundColor="lightblue";
+   });
+   document.getElementById("category1").addEventListener("mouseleave",function(){
+    document.getElementById("category").style.backgroundColor="white";
+    document.getElementById("category1").style.backgroundColor="white";
+   });
+
+   document.getElementById("date1").addEventListener("click",function(){
+    document.getElementById("date1").style.backgroundColor="lightblue";
+    document.getElementById("date").style.backgroundColor="lightblue";
+   });
+
+</script>
+</body>
+</html>
